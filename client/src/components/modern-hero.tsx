@@ -12,10 +12,10 @@ export default function ModernHero() {
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 gradient-bg opacity-90"></div>
-        <div className="absolute top-20 right-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -28,17 +28,12 @@ export default function ModernHero() {
           >
 
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-normal mb-6 md:mb-8 pb-2">
-              <span className="text-white block">Construye una</span>
-              <span className="text-white block mt-1 md:mt-2" style={{
-                background: 'linear-gradient(135deg, #00d4ff 0%, #ff0080 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-normal mb-6 md:mb-8">
+              <span className="text-white block mb-2">Construye una</span>
+              <span className="text-blue-400 block mb-2 font-extrabold">
                 Presencia Digital
               </span>
-              <span className="text-white block mt-1 md:mt-2">
+              <span className="text-gray-100 block">
                 Auténtica y Automatizada
               </span>
             </h1>
