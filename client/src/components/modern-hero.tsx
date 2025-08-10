@@ -28,7 +28,7 @@ export default function ModernHero() {
           >
 
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 md:mb-8">
               <span className="text-white block">Construye una</span>
               <span className="text-gradient block mt-1 md:mt-2">
                 Presencia Digital
