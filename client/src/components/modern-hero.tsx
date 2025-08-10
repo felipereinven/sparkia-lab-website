@@ -30,29 +30,29 @@ export default function ModernHero() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent mb-8"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-white mb-8"
             >
               🚀 Agencia Digital Estratégica
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-              Construye una 
+              <span className="text-white">Construye una</span>
               <span className="text-gradient block mt-2">
                 Presencia Digital
               </span>
-              <span className="text-foreground">
+              <span className="text-white">
                 Auténtica y Automatizada
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl">
               Ayudamos a emprendedores y pequeñas empresas a posicionar su valor, conectar con su audiencia ideal y crecer de forma estructurada con IA.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <motion.button 
                 onClick={scrollToContact}
-                className="btn-primary px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center"
+                className="bg-white text-black hover:bg-white/90 px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -63,7 +63,7 @@ export default function ModernHero() {
               </motion.button>
               
               <motion.button 
-                className="btn-secondary px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -83,15 +83,15 @@ export default function ModernHero() {
             >
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-gradient">$90K+</div>
-                <div className="text-muted-foreground text-sm mt-1">Ingresos Anuales</div>
+                <div className="text-white/70 text-sm mt-1">Ingresos Anuales</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-gradient">300%</div>
-                <div className="text-muted-foreground text-sm mt-1">ROI Promedio</div>
+                <div className="text-white/70 text-sm mt-1">ROI Promedio</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-gradient">24/7</div>
-                <div className="text-muted-foreground text-sm mt-1">Automatización</div>
+                <div className="text-white/70 text-sm mt-1">Automatización</div>
               </div>
             </motion.div>
           </motion.div>

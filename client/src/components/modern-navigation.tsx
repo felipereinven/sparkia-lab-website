@@ -47,31 +47,31 @@ export default function ModernNavigation() {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('servicios')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
               Servicios
             </button>
             <button 
               onClick={() => scrollToSection('proceso')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
               Proceso
             </button>
             <button 
               onClick={() => scrollToSection('resultados')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
               Resultados
             </button>
             <button 
               onClick={() => scrollToSection('testimonios')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
               Testimonios
             </button>
             <motion.button 
               onClick={() => scrollToSection('contacto')}
-              className="btn-primary px-6 py-3 rounded-full text-sm font-semibold"
+              className="bg-white text-black hover:bg-white/90 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -104,31 +104,31 @@ export default function ModernNavigation() {
             <div className="space-y-4">
               <button 
                 onClick={() => scrollToSection('servicios')}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors"
+                className="block w-full text-left text-white hover:text-primary transition-colors"
               >
                 Servicios
               </button>
               <button 
                 onClick={() => scrollToSection('proceso')}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors"
+                className="block w-full text-left text-white hover:text-primary transition-colors"
               >
                 Proceso
               </button>
               <button 
                 onClick={() => scrollToSection('resultados')}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors"
+                className="block w-full text-left text-white hover:text-primary transition-colors"
               >
                 Resultados
               </button>
               <button 
                 onClick={() => scrollToSection('testimonios')}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors"
+                className="block w-full text-left text-white hover:text-primary transition-colors"
               >
                 Testimonios
               </button>
               <button 
                 onClick={() => scrollToSection('contacto')}
-                className="btn-primary w-full py-3 rounded-full text-sm font-semibold mt-4"
+                className="bg-white text-black hover:bg-white/90 w-full py-3 rounded-full text-sm font-semibold mt-4 transition-colors duration-200"
               >
                 Empezar Ahora
               </button>
