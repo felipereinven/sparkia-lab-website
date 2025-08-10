@@ -9,7 +9,7 @@ export default function ModernHero() {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 gradient-bg opacity-90"></div>
@@ -28,39 +28,39 @@ export default function ModernHero() {
           >
 
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-              <span className="text-white">Construye una</span>
-              <span className="text-gradient block mt-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
+              <span className="text-white block">Construye una</span>
+              <span className="text-gradient block mt-1 md:mt-2">
                 Presencia Digital
               </span>
-              <span className="text-white">
+              <span className="text-white block mt-1 md:mt-2">
                 Auténtica y Automatizada
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-12 leading-relaxed max-w-2xl">
               Ayudamos a emprendedores y pequeñas empresas a posicionar su valor, conectar con su audiencia ideal y crecer de forma estructurada con IA.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start">
               <motion.button 
                 onClick={scrollToContact}
-                className="bg-white text-black hover:bg-white/90 px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center transition-all duration-200"
+                className="bg-white text-black hover:bg-gray-100 hover:shadow-lg px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold inline-flex items-center justify-center transition-all duration-200 shadow-md"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
                 Diagnóstico Gratuito
               </motion.button>
               
               <motion.button 
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center transition-all duration-200"
+                className="border-2 border-white/80 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold inline-flex items-center justify-center transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Ver Casos de Éxito
@@ -69,22 +69,22 @@ export default function ModernHero() {
 
             {/* Stats */}
             <motion.div 
-              className="mt-16 grid grid-cols-3 gap-8"
+              className="mt-12 md:mt-16 grid grid-cols-3 gap-4 md:gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gradient">$90K+</div>
-                <div className="text-white/70 text-sm mt-1">Ingresos Anuales</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">$90K+</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1">Ingresos Anuales</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gradient">300%</div>
-                <div className="text-white/70 text-sm mt-1">ROI Promedio</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">300%</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1">ROI Promedio</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gradient">24/7</div>
-                <div className="text-white/70 text-sm mt-1">Automatización</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">24/7</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1">Automatización</div>
               </div>
             </motion.div>
           </motion.div>
