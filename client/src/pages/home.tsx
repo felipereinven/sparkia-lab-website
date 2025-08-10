@@ -1,27 +1,27 @@
-import Navigation from "@/components/navigation";
-import HeroSection from "@/components/hero-section";
-import ProblemSolution from "@/components/problem-solution";
-import ServicesShowcase from "@/components/services-showcase";
-import TransformationStats from "@/components/transformation-stats";
-import TestimonialCarousel from "@/components/testimonial-carousel";
-import FAQAccordion from "@/components/faq-accordion";
-import CTASection from "@/components/cta-section";
-import ContactForm from "@/components/contact-form";
-import Footer from "@/components/footer";
+import ModernNavigation from "@/components/modern-navigation";
+import ModernHero from "@/components/modern-hero";
+import ProblemSolutionGrid from "@/components/problem-solution-grid";
+import ServicesGrid from "@/components/services-grid";
+import StatsSection from "@/components/stats-section";
+import TestimonialsSection from "@/components/testimonials-section";
+import ProcessSection from "@/components/process-section";
+import ModernCTA from "@/components/modern-cta";
+import ModernContactForm from "@/components/modern-contact-form";
+import ModernFooter from "@/components/modern-footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navigation />
-      <HeroSection />
-      <ProblemSolution />
-      <ServicesShowcase />
-      <TransformationStats />
-      <TestimonialCarousel />
-      <FAQAccordion />
-      <CTASection />
-      <ContactForm />
-      <Footer />
+    <div className="min-h-screen bg-background text-foreground">
+      <ModernNavigation />
+      <ModernHero />
+      <ProblemSolutionGrid />
+      <ServicesGrid />
+      <StatsSection />
+      <TestimonialsSection />
+      <ProcessSection />
+      <ModernCTA />
+      <ModernContactForm />
+      <ModernFooter />
     </div>
   );
 }
