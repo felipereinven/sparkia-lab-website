@@ -135,22 +135,22 @@ export default function StatsSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="text-white">
-            <h3 className="text-3xl font-bold mb-6">Automatización 24/7 Activa</h3>
+            <h3 className="text-3xl font-bold mb-6">{t('statsSection.automation.title')}</h3>
             <p className="text-xl text-white/80 mb-6">
-              Nuestros sistemas trabajan las 24 horas generando leads, nutriendo prospectos y cerrando ventas mientras tú duermes.
+              {t('statsSection.automation.description')}
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-4"></div>
-                <span>Chatbots inteligentes con IA</span>
+                <span>{t('statsSection.automation.feature1')}</span>
               </div>
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-blue-400 rounded-full mr-4"></div>
-                <span>Email marketing automatizado</span>
+                <span>{t('statsSection.automation.feature2')}</span>
               </div>
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-purple-400 rounded-full mr-4"></div>
-                <span>Análisis y optimización continua</span>
+                <span>{t('statsSection.automation.feature3')}</span>
               </div>
             </div>
           </div>
@@ -162,21 +162,21 @@ export default function StatsSection() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="text-white font-semibold">Automatización Activa</span>
+                <span className="text-white font-semibold">{t('statsSection.automation.status')}</span>
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
               </div>
               
               <div className="space-y-3">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/80">Leads generados hoy</span>
+                  <span className="text-white/80">{t('statsSection.automation.leadsToday')}</span>
                   <span className="text-green-400 font-semibold">+23</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/80">Emails enviados</span>
+                  <span className="text-white/80">{t('statsSection.automation.emailsSent')}</span>
                   <span className="text-blue-400 font-semibold">847</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/80">Conversiones</span>
+                  <span className="text-white/80">{t('statsSection.automation.conversions')}</span>
                   <span className="text-purple-400 font-semibold">12</span>
                 </div>
               </div>

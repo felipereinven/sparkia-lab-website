@@ -197,5 +197,14 @@
   "transformationStats.subtitle": "Nuestros clientes experimentan transformaciones reales y medibles en su negocio.",
   "transformationStats.revenue": "Ingresos Anuales Promedio por Cliente",
   "transformationStats.roi": "ROI Promedio en 12 Meses",
-  "transformationStats.automation": "Automatización Activa"
+  "transformationStats.automation": "Automatización Activa",
+  "statsSection.automation.title": "Automatización 24/7 Activa",
+  "statsSection.automation.description": "Nuestros sistemas trabajan las 24 horas generando leads, nutriendo prospectos y cerrando ventas mientras tú duermes.",
+  "statsSection.automation.feature1": "Chatbots inteligentes con IA",
+  "statsSection.automation.feature2": "Email marketing automatizado",
+  "statsSection.automation.feature3": "Análisis y optimización continua",
+  "statsSection.automation.status": "Automatización Activa",
+  "statsSection.automation.leadsToday": "Leads generados hoy",
+  "statsSection.automation.emailsSent": "Emails enviados",
+  "statsSection.automation.conversions": "Conversiones"
 }

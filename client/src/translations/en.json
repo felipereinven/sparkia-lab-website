@@ -197,5 +197,14 @@
   "transformationStats.subtitle": "Our clients experience real and measurable transformations in their business.",
   "transformationStats.revenue": "Average Annual Revenue per Client",
   "transformationStats.roi": "Average ROI in 12 Months",
-  "transformationStats.automation": "Active Automation"
+  "transformationStats.automation": "Active Automation",
+  "statsSection.automation.title": "24/7 Active Automation",
+  "statsSection.automation.description": "Our systems work 24 hours generating leads, nurturing prospects, and closing sales while you sleep.",
+  "statsSection.automation.feature1": "AI-powered chatbots",
+  "statsSection.automation.feature2": "Automated email marketing",
+  "statsSection.automation.feature3": "Continuous analysis and optimization",
+  "statsSection.automation.status": "Active Automation",
+  "statsSection.automation.leadsToday": "Leads generated today",
+  "statsSection.automation.emailsSent": "Emails sent",
+  "statsSection.automation.conversions": "Conversions"
 }
