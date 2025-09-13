@@ -25,15 +25,11 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>('en'); // Default to English
-
-  useEffect(() => {
-    // Try to get saved language from localStorage, default to English
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
-      setLanguageState(savedLanguage);
-    }
-  }, []);
+  const [language, setLanguageState] = useState<Language>(() => {
+    // Initialize from localStorage to prevent flicker
+    const savedLanguage = localStorage.getItem('language') as Language | null;
+    return (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) ? savedLanguage : 'en';
+  });
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

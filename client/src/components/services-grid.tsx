@@ -1,47 +1,49 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ServicesGrid() {
+  const { t } = useLanguage();
   const services = [
     {
       icon: "🔍",
-      title: "Diagnóstico Estratégico",
-      description: "Análisis profundo de marca, mercado y objetivos con auditoría digital completa.",
-      features: ["Análisis de diferenciador", "Auditoría digital completa", "Plan de acción estratégico"],
+      title: t('services.diagnostic.title'),
+      description: t('services.diagnostic.description'),
+      features: [t('services.diagnostic.feature1'), t('services.diagnostic.feature2'), t('services.diagnostic.feature3')],
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: "📢",
-      title: "Posicionamiento y Mensaje",
-      description: "Desarrollo de storytelling auténtico y copywriting que conecta y convierte.",
-      features: ["Propuesta de valor única", "Storytelling auténtico", "Copywriting persuasivo"],
+      title: t('services.positioning.title'),
+      description: t('services.positioning.description'),
+      features: [t('services.positioning.feature1'), t('services.positioning.feature2'), t('services.positioning.feature3')],
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: "🌐",
-      title: "Plataforma Web Inteligente",
-      description: "Diseño y desarrollo web con enfoque en UX/UI y automatizaciones con IA.",
-      features: ["Diseño UX/UI optimizado", "Automatizaciones con IA", "Analítica y CRM integrados"],
+      title: t('services.web.title'),
+      description: t('services.web.description'),
+      features: [t('services.web.feature1'), t('services.web.feature2'), t('services.web.feature3')],
       color: "from-green-500 to-teal-500"
     },
     {
       icon: "🚀",
-      title: "Embudo Automatizado",
-      description: "Funnel completo con lead magnets, emails y secuencias automatizadas.",
-      features: ["Diseño de funnel completo", "Lead magnets estratégicos", "Email marketing automatizado"],
+      title: t('services.funnel.title'),
+      description: t('services.funnel.description'),
+      features: [t('services.funnel.feature1'), t('services.funnel.feature2'), t('services.funnel.feature3')],
       color: "from-orange-500 to-red-500"
     },
     {
       icon: "📊",
-      title: "Acompañamiento Estratégico",
-      description: "Mentoría mensual con análisis de resultados y ajustes continuos.",
-      features: ["Reuniones de seguimiento", "Análisis de métricas", "Soporte técnico continuo"],
+      title: t('services.support.title'),
+      description: t('services.support.description'),
+      features: [t('services.support.feature1'), t('services.support.feature2'), t('services.support.feature3')],
       color: "from-indigo-500 to-purple-500"
     },
     {
       icon: "📱",
-      title: "Gestión de Redes Sociales",
-      description: "Estrategia completa en redes con calendario y gestión de comunidad.",
-      features: ["Calendario de publicaciones", "Análisis de métricas", "Gestión de comunidad"],
+      title: t('services.social.title'),
+      description: t('services.social.description'),
+      features: [t('services.social.feature1'), t('services.social.feature2'), t('services.social.feature3')],
       color: "from-pink-500 to-rose-500"
     }
   ];
@@ -57,11 +59,11 @@ export default function ServicesGrid() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Solución Integral en 
-            <span className="text-gradient block mt-2">Fases Estratégicas</span>
+            {t('services.title')} 
+            <span className="text-gradient block mt-2">{t('services.phases')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Implementamos cada fase según la necesidad y madurez de tu negocio, garantizando resultados medibles y sostenibles.
+            {t('services.subtitle')}
           </p>
         </motion.div>
 
@@ -94,7 +96,7 @@ export default function ServicesGrid() {
 
                 <div className="mt-6 pt-6 border-t border-border">
                   <button className="text-primary font-semibold text-sm hover:text-primary/80 transition-colors">
-                    Conocer más →
+                    {t('services.learnMore')} →
                   </button>
                 </div>
               </div>
@@ -110,7 +112,7 @@ export default function ServicesGrid() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <button className="btn-primary px-8 py-4 rounded-full text-lg font-semibold">
-            Ver Todos los Servicios
+            {t('services.viewAll')}
           </button>
         </motion.div>
       </div>

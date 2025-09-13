@@ -1,38 +1,40 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProcessSection() {
+  const { t } = useLanguage();
   const steps = [
     {
       number: "01",
-      title: "Diagnóstico Estratégico",
-      description: "Analizamos tu situación actual, objetivos y oportunidades en una sesión profunda de 90 minutos.",
+      title: t('process.step1.title'),
+      description: t('process.step1.desc'),
       icon: "🔍",
-      timeline: "Semana 1",
-      deliverables: ["Auditoría digital completa", "Análisis de competencia", "Plan estratégico personalizado"]
+      timeline: t('process.step1.timeline'),
+      deliverables: [t('process.step1.deliverable1'), t('process.step1.deliverable2'), t('process.step1.deliverable3')]
     },
     {
       number: "02",
-      title: "Diseño de Estrategia",
-      description: "Creamos tu propuesta de valor única y diseñamos el customer journey optimizado.",
+      title: t('process.step2.title'),
+      description: t('process.step2.desc'),
       icon: "🎯",
-      timeline: "Semanas 2-3",
-      deliverables: ["Posicionamiento de marca", "Mensaje principal", "Embudo de ventas"]
+      timeline: t('process.step2.timeline'),
+      deliverables: [t('process.step2.deliverable1'), t('process.step2.deliverable2'), t('process.step2.deliverable3')]
     },
     {
       number: "03",
-      title: "Implementación Técnica",
-      description: "Desarrollamos tu plataforma web y configuramos todas las automatizaciones con IA.",
+      title: t('process.step3.title'),
+      description: t('process.step3.desc'),
       icon: "⚡",
-      timeline: "Semanas 4-8",
-      deliverables: ["Sitio web optimizado", "Automatizaciones IA", "Integración CRM"]
+      timeline: t('process.step3.timeline'),
+      deliverables: [t('process.step3.deliverable1'), t('process.step3.deliverable2'), t('process.step3.deliverable3')]
     },
     {
       number: "04",
-      title: "Lanzamiento y Optimización",
-      description: "Ponemos todo en marcha y optimizamos continuamente basado en datos reales.",
+      title: t('process.step4.title'),
+      description: t('process.step4.desc'),
       icon: "🚀",
-      timeline: "Semanas 9-12",
-      deliverables: ["Lanzamiento oficial", "Análisis de métricas", "Optimización continua"]
+      timeline: t('process.step4.timeline'),
+      deliverables: [t('process.step4.deliverable1'), t('process.step4.deliverable2'), t('process.step4.deliverable3')]
     }
   ];
 
@@ -47,11 +49,11 @@ export default function ProcessSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Nuestro Proceso de 
-            <span className="text-gradient block mt-2">Transformación Digital</span>
+            {t('process.title')} 
+            <span className="text-gradient block mt-2">{t('process.digital')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Un proceso probado de 12 semanas que transforma tu negocio de forma estructurada y medible.
+            {t('process.subtitle')}
           </p>
         </motion.div>
 
@@ -86,7 +88,7 @@ export default function ProcessSection() {
                     </p>
 
                     <div>
-                      <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide">Entregables:</h4>
+                      <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide">{t('process.deliverables')}:</h4>
                       <ul className="space-y-2">
                         {step.deliverables.map((deliverable, deliverableIndex) => (
                           <li key={deliverableIndex} className="flex items-center text-sm text-muted-foreground">
@@ -125,12 +127,12 @@ export default function ProcessSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <div className="glass-effect rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">¿Listo para comenzar tu transformación?</h3>
+            <h3 className="text-2xl font-bold mb-4">{t('process.cta.title')}</h3>
             <p className="text-muted-foreground mb-6">
-              El primer paso es un diagnóstico gratuito donde evaluaremos tu situación actual.
+              {t('process.cta.subtitle')}
             </p>
             <button className="btn-primary px-8 py-4 rounded-full font-semibold">
-              Solicitar Diagnóstico Gratuito
+              {t('hero.cta')}
             </button>
           </div>
         </motion.div>
