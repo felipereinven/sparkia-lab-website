@@ -182,5 +182,20 @@
   "process.step4.deliverable2": "Análisis de métricas",
   "process.step4.deliverable3": "Optimización continua",
   "process.cta.title": "¿Listo para comenzar tu transformación?",
-  "process.cta.subtitle": "El primer paso es un diagnóstico gratuito donde evaluaremos tu situación actual."
+  "process.cta.subtitle": "El primer paso es un diagnóstico gratuito donde evaluaremos tu situación actual.",
+  "statsSection.title": "Resultados que Hablan por Sí Solos",
+  "statsSection.subtitle": "Nuestros clientes experimentan transformaciones reales y medibles en su negocio.",
+  "statsSection.revenue.label": "Ingresos Anuales Promedio",
+  "statsSection.revenue.description": "por cliente",
+  "statsSection.roi.label": "ROI Promedio",
+  "statsSection.roi.description": "en 12 meses",
+  "statsSection.satisfaction.label": "Satisfacción",
+  "statsSection.satisfaction.description": "del cliente",
+  "statsSection.clients.label": "Clientes Transformados",
+  "statsSection.clients.description": "exitosamente",
+  "transformationStats.title": "Resultados que Hablan por Sí Solos",
+  "transformationStats.subtitle": "Nuestros clientes experimentan transformaciones reales y medibles en su negocio.",
+  "transformationStats.revenue": "Ingresos Anuales Promedio por Cliente",
+  "transformationStats.roi": "ROI Promedio en 12 Meses",
+  "transformationStats.automation": "Automatización Activa"
 }

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function StatsSection() {
+  const { t } = useLanguage();
   const [counters, setCounters] = useState({
     revenue: 0,
     roi: 0,
@@ -49,29 +51,29 @@ export default function StatsSection() {
     {
       icon: "💰",
       value: `$${counters.revenue}K+`,
-      label: "Ingresos Anuales Promedio",
-      description: "por cliente",
+      label: t('statsSection.revenue.label'),
+      description: t('statsSection.revenue.description'),
       color: "text-green-400"
     },
     {
       icon: "📈",
       value: `${counters.roi}%`,
-      label: "ROI Promedio",
-      description: "en 12 meses",
+      label: t('statsSection.roi.label'),
+      description: t('statsSection.roi.description'),
       color: "text-blue-400"
     },
     {
       icon: "😊",
       value: `${counters.satisfaction}%`,
-      label: "Satisfacción",
-      description: "del cliente",
+      label: t('statsSection.satisfaction.label'),
+      description: t('statsSection.satisfaction.description'),
       color: "text-purple-400"
     },
     {
       icon: "🎯",
       value: `${counters.clients}+`,
-      label: "Clientes Transformados",
-      description: "exitosamente",
+      label: t('statsSection.clients.label'),
+      description: t('statsSection.clients.description'),
       color: "text-orange-400"
     }
   ];
@@ -92,10 +94,10 @@ export default function StatsSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Resultados que Hablan por Sí Solos
+            {t('statsSection.title')}
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Nuestros clientes experimentan transformaciones reales y medibles en su negocio.
+            {t('statsSection.subtitle')}
           </p>
         </motion.div>
 

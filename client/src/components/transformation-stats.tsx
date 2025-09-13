@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TransformationStats() {
+  const { t } = useLanguage();
   const [counters, setCounters] = useState({
     revenue: 0,
     roi: 0,
@@ -60,10 +62,10 @@ export default function TransformationStats() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-white mb-6">
-            Resultados que Hablan por Sí Solos
+            {t('transformationStats.title')}
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Nuestros clientes experimentan transformaciones reales y medibles en su negocio.
+            {t('transformationStats.subtitle')}
           </p>
         </motion.div>
 
@@ -78,7 +80,7 @@ export default function TransformationStats() {
             <div className="text-5xl font-bold mb-4 text-yellow-400">
               {formatRevenue(counters.revenue)}
             </div>
-            <div className="text-lg text-blue-100">Ingresos Anuales Promedio por Cliente</div>
+            <div className="text-lg text-blue-100">{t('transformationStats.revenue')}</div>
           </motion.div>
           
           <motion.div 
@@ -89,7 +91,7 @@ export default function TransformationStats() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="text-5xl font-bold mb-4 text-yellow-400">{counters.roi}%</div>
-            <div className="text-lg text-blue-100">ROI Promedio en 12 Meses</div>
+            <div className="text-lg text-blue-100">{t('transformationStats.roi')}</div>
           </motion.div>
           
           <motion.div 
@@ -100,7 +102,7 @@ export default function TransformationStats() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="text-5xl font-bold mb-4 text-yellow-400">24/7</div>
-            <div className="text-lg text-blue-100">Automatización Activa</div>
+            <div className="text-lg text-blue-100">{t('transformationStats.automation')}</div>
           </motion.div>
           
           <motion.div 

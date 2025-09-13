@@ -182,5 +182,20 @@
   "process.step4.deliverable2": "Metrics analysis",
   "process.step4.deliverable3": "Continuous optimization",
   "process.cta.title": "Ready to start your transformation?",
-  "process.cta.subtitle": "The first step is a free diagnosis where we'll evaluate your current situation."
+  "process.cta.subtitle": "The first step is a free diagnosis where we'll evaluate your current situation.",
+  "statsSection.title": "Results That Speak for Themselves",
+  "statsSection.subtitle": "Our clients experience real and measurable transformations in their business.",
+  "statsSection.revenue.label": "Average Annual Revenue",
+  "statsSection.revenue.description": "per client",
+  "statsSection.roi.label": "Average ROI",
+  "statsSection.roi.description": "in 12 months",
+  "statsSection.satisfaction.label": "Satisfaction",
+  "statsSection.satisfaction.description": "of clients",
+  "statsSection.clients.label": "Clients Transformed",
+  "statsSection.clients.description": "successfully",
+  "transformationStats.title": "Results That Speak for Themselves",
+  "transformationStats.subtitle": "Our clients experience real and measurable transformations in their business.",
+  "transformationStats.revenue": "Average Annual Revenue per Client",
+  "transformationStats.roi": "Average ROI in 12 Months",
+  "transformationStats.automation": "Active Automation"
 }
