@@ -1,49 +1,51 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProblemSolutionGrid() {
+  const { t } = useLanguage();
   const problems = [
     {
       icon: "🔍",
-      title: "No saben por dónde empezar",
-      description: "Falta de estructura y dirección clara para su marca online"
+      title: t('problemSolution.problem1.title'),
+      description: t('problemSolution.problem1.description')
     },
     {
       icon: "⏰",
-      title: "Improvisando constantemente",
-      description: "Perdiendo tiempo valioso sin procesos ni estrategia definida"
+      title: t('problemSolution.problem2.title'),
+      description: t('problemSolution.problem2.description')
     },
     {
       icon: "📢",
-      title: "Comunicación que no convierte",
-      description: "Mensaje que no posiciona ni genera resultados tangibles"
+      title: t('problemSolution.problem3.title'),
+      description: t('problemSolution.problem3.description')
     },
     {
       icon: "📈",
-      title: "Competencia avanzando",
-      description: "Viendo cómo otros progresan mientras se quedan estancados"
+      title: t('problemSolution.problem4.title'),
+      description: t('problemSolution.problem4.description')
     }
   ];
 
   const solutions = [
     {
       icon: "🎯",
-      title: "Estrategia clara y medible",
-      description: "Plan adaptado a su realidad específica y objetivos"
+      title: t('problemSolution.solution1.title'),
+      description: t('problemSolution.solution1.description')
     },
     {
       icon: "🤖",
-      title: "Delegación inteligente",
-      description: "Automatización técnica para enfocarse en liderar y crecer"
+      title: t('problemSolution.solution2.title'),
+      description: t('problemSolution.solution2.description')
     },
     {
       icon: "💬",
-      title: "Comunicación efectiva",
-      description: "Mensaje claro que conecta con la audiencia ideal"
+      title: t('problemSolution.solution3.title'),
+      description: t('problemSolution.solution3.description')
     },
     {
       icon: "🧘",
-      title: "Crecimiento sostenible",
-      description: "Negocio ordenado con paz mental y resultados consistentes"
+      title: t('problemSolution.solution4.title'),
+      description: t('problemSolution.solution4.description')
     }
   ];
 
@@ -58,11 +60,11 @@ export default function ProblemSolutionGrid() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            De la <span className="text-red-400">Improvisación</span> al 
-            <span className="text-gradient block mt-2">Crecimiento Estructurado</span>
+            {t('problemSolution.title')} <span className="text-red-400">{t('problemSolution.improvisation')}</span> {t('problemSolution.to')} 
+            <span className="text-gradient block mt-2">{t('problemSolution.structuredGrowth')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transformamos negocios estancados en máquinas de crecimiento automatizadas y escalables.
+            {t('problemSolution.subtitle')}
           </p>
         </motion.div>
         
@@ -75,8 +77,8 @@ export default function ProblemSolutionGrid() {
             transition={{ duration: 0.6 }}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-red-400 mb-4">😰 Antes de Sparkia Lab</h3>
-              <p className="text-muted-foreground">Los desafíos que enfrentan nuestros clientes</p>
+              <h3 className="text-3xl font-bold text-red-400 mb-4">{t('problemSolution.beforeTitle')}</h3>
+              <p className="text-muted-foreground">{t('problemSolution.beforeSubtitle')}</p>
             </div>
             
             <div className="space-y-6">
@@ -107,8 +109,8 @@ export default function ProblemSolutionGrid() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-green-400 mb-4">✨ Después de Sparkia Lab</h3>
-              <p className="text-muted-foreground">La transformación que experimentan</p>
+              <h3 className="text-3xl font-bold text-green-400 mb-4">{t('problemSolution.afterTitle')}</h3>
+              <p className="text-muted-foreground">{t('problemSolution.afterSubtitle')}</p>
             </div>
             
             <div className="space-y-6">

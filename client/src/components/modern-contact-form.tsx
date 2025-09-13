@@ -6,6 +6,7 @@ import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,24 +14,34 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-const contactFormSchema = z.object({
-  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
-  email: z.string().email("Email inválido"),
-  phone: z.string().optional(),
-  businessType: z.string().optional(),
-  monthlyRevenue: z.string().optional(),
-  challenge: z.string().min(10, "Describe tu desafío con más detalle"),
-  acceptedTerms: z.boolean().refine(val => val === true, "Debes aceptar los términos")
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = {
+  name: string;
+  email: string;
+  phone?: string;
+  businessType?: string;
+  monthlyRevenue?: string;
+  challenge: string;
+  acceptedTerms: boolean;
+};
 
 export default function ModernContactForm() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
+  // Create localized schema
+  const localizedSchema = z.object({
+    name: z.string().min(2, t('contact.form.nameError')),
+    email: z.string().email(t('contact.form.emailError')),
+    phone: z.string().optional(),
+    businessType: z.string().optional(),
+    monthlyRevenue: z.string().optional(),
+    challenge: z.string().min(10, t('contact.form.challengeError')),
+    acceptedTerms: z.boolean().refine(val => val === true, t('contact.form.termsError'))
+  });
+
   const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(localizedSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -52,16 +63,16 @@ export default function ModernContactForm() {
     },
     onSuccess: () => {
       toast({
-        title: "¡Formulario enviado exitosamente!",
-        description: "Te contactaremos en menos de 24 horas para agendar tu diagnóstico gratuito.",
+        title: t('contact.form.successTitle'),
+        description: t('contact.form.successMessage'),
       });
       form.reset();
       setAcceptedTerms(false);
     },
     onError: (error: any) => {
       toast({
-        title: "Error al enviar formulario",
-        description: error.message || "Por favor, intenta nuevamente.",
+        title: t('contact.form.errorTitle'),
+        description: error.message || t('contact.form.errorMessage'),
         variant: "destructive",
       });
     }
@@ -82,11 +93,11 @@ export default function ModernContactForm() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Solicita tu 
-            <span className="text-gradient">Diagnóstico Gratuito</span>
+            {t('contact.title')} 
+            <span className="text-gradient">{t('contact.freeDiagnosis')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Completa el formulario y te contactaremos en menos de 24 horas para transformar tu negocio.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -100,7 +111,7 @@ export default function ModernContactForm() {
             className="space-y-8"
           >
             <div className="card-modern p-8">
-              <h3 className="text-2xl font-bold mb-6">¿Por qué elegir Sparkia Lab?</h3>
+              <h3 className="text-2xl font-bold mb-6">{t('contact.whyChoose')}</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -110,8 +121,8 @@ export default function ModernContactForm() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Estrategia Personalizada</h4>
-                    <p className="text-muted-foreground text-sm">No usamos fórmulas genéricas. Cada estrategia se adapta a tu realidad específica.</p>
+                    <h4 className="font-semibold mb-2">{t('contact.personalizedStrategy')}</h4>
+                    <p className="text-muted-foreground text-sm">{t('contact.personalizedDesc')}</p>
                   </div>
                 </div>
 
@@ -122,8 +133,8 @@ export default function ModernContactForm() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Automatización Inteligente</h4>
-                    <p className="text-muted-foreground text-sm">IA que trabaja 24/7 generando leads y optimizando tu embudo de ventas.</p>
+                    <h4 className="font-semibold mb-2">{t('contact.intelligentAutomation')}</h4>
+                    <p className="text-muted-foreground text-sm">{t('contact.intelligentAutomationDesc')}</p>
                   </div>
                 </div>
 
@@ -134,8 +145,8 @@ export default function ModernContactForm() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">ROI Garantizado</h4>
-                    <p className="text-muted-foreground text-sm">Si no mejoras tu ROI en 6 meses, seguimos trabajando sin costo adicional.</p>
+                    <h4 className="font-semibold mb-2">{t('contact.guaranteedROI')}</h4>
+                    <p className="text-muted-foreground text-sm">{t('contact.guaranteedROIDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -143,21 +154,21 @@ export default function ModernContactForm() {
 
             {/* Contact Details */}
             <div className="card-modern p-8">
-              <h3 className="text-xl font-bold mb-6">Información de Contacto</h3>
+              <h3 className="text-xl font-bold mb-6">{t('contact.contactInfo')}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center">
                   <svg className="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span>+57 321 693 1671</span>
+                  <span>{t('contact.phone')}</span>
                 </div>
                 
                 <div className="flex items-center">
                   <svg className="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span>hello@sparkialab.com</span>
+                  <span>{t('contact.email')}</span>
                 </div>
                 
                 <div className="flex items-center">
@@ -165,7 +176,7 @@ export default function ModernContactForm() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Miami, FL</span>
+                  <span>{t('contact.location')}</span>
                 </div>
               </div>
             </div>
@@ -182,10 +193,10 @@ export default function ModernContactForm() {
           >
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <Label className="block text-sm font-semibold mb-3">Nombre completo *</Label>
+                <Label className="block text-sm font-semibold mb-3">{t('contact.form.fullName')}</Label>
                 <Input
                   {...form.register("name")}
-                  placeholder="Tu nombre completo"
+                  placeholder={t('contact.form.namePlaceholder')}
                   className="w-full form-input"
                   data-testid="input-name"
                 />
@@ -194,11 +205,11 @@ export default function ModernContactForm() {
                 )}
               </div>
               <div>
-                <Label className="block text-sm font-semibold mb-3">Email *</Label>
+                <Label className="block text-sm font-semibold mb-3">{t('contact.form.email')}</Label>
                 <Input
                   {...form.register("email")}
                   type="email"
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   className="w-full form-input"
                   data-testid="input-email"
                 />
@@ -210,53 +221,53 @@ export default function ModernContactForm() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <Label className="block text-sm font-semibold mb-3">Teléfono</Label>
+                <Label className="block text-sm font-semibold mb-3">{t('contact.form.phone')}</Label>
                 <Input
                   {...form.register("phone")}
                   type="tel"
-                  placeholder="+57 321 123 4567"
+                  placeholder={t('contact.form.phonePlaceholder')}
                   className="w-full form-input"
                   data-testid="input-phone"
                 />
               </div>
               <div>
-                <Label className="block text-sm font-semibold mb-3">Tipo de negocio</Label>
+                <Label className="block text-sm font-semibold mb-3">{t('contact.form.businessType')}</Label>
                 <Select onValueChange={(value) => form.setValue("businessType", value)}>
                   <SelectTrigger className="w-full form-input" data-testid="select-business-type">
-                    <SelectValue placeholder="Selecciona una opción" />
+                    <SelectValue placeholder={t('contact.form.selectOption')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="ecommerce">E-commerce</SelectItem>
-                    <SelectItem value="services">Servicios profesionales</SelectItem>
-                    <SelectItem value="saas">SaaS / Tecnología</SelectItem>
-                    <SelectItem value="consulting">Consultoría</SelectItem>
-                    <SelectItem value="other">Otro</SelectItem>
+                    <SelectItem value="ecommerce">{t('contact.form.ecommerce')}</SelectItem>
+                    <SelectItem value="services">{t('contact.form.services')}</SelectItem>
+                    <SelectItem value="saas">{t('contact.form.saas')}</SelectItem>
+                    <SelectItem value="consulting">{t('contact.form.consulting')}</SelectItem>
+                    <SelectItem value="other">{t('contact.form.other')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
 
             <div className="mb-6">
-              <Label className="block text-sm font-semibold mb-3">Ingresos mensuales actuales</Label>
+              <Label className="block text-sm font-semibold mb-3">{t('contact.form.monthlyRevenue')}</Label>
               <Select onValueChange={(value) => form.setValue("monthlyRevenue", value)}>
                 <SelectTrigger className="w-full form-input" data-testid="select-revenue">
-                  <SelectValue placeholder="Selecciona un rango" />
+                  <SelectValue placeholder={t('contact.form.selectRange')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="less-5k">Menos de $5K</SelectItem>
-                  <SelectItem value="5k-15k">$5K - $15K</SelectItem>
-                  <SelectItem value="15k-50k">$15K - $50K</SelectItem>
-                  <SelectItem value="more-50k">Más de $50K</SelectItem>
+                  <SelectItem value="less-5k">{t('contact.form.less5k')}</SelectItem>
+                  <SelectItem value="5k-15k">{t('contact.form.5k15k')}</SelectItem>
+                  <SelectItem value="15k-50k">{t('contact.form.15k50k')}</SelectItem>
+                  <SelectItem value="more-50k">{t('contact.form.more50k')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="mb-6">
-              <Label className="block text-sm font-semibold mb-3">¿Cuál es tu mayor desafío actual? *</Label>
+              <Label className="block text-sm font-semibold mb-3">{t('contact.form.challenge')}</Label>
               <Textarea
                 {...form.register("challenge")}
                 rows={4}
-                placeholder="Describe brevemente tu situación actual y qué te gustaría lograr..."
+                placeholder={t('contact.form.challengePlaceholder')}
                 className="w-full form-input resize-none"
                 data-testid="textarea-challenge"
               />
@@ -277,7 +288,7 @@ export default function ModernContactForm() {
                   className="mt-1"
                 />
                 <Label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed">
-                  Acepto recibir comunicaciones de Sparkia Lab y la política de privacidad. Mis datos estarán protegidos y nunca serán compartidos con terceros. *
+                  {t('contact.form.terms')}
                 </Label>
               </div>
               {form.formState.errors.acceptedTerms && (
@@ -295,14 +306,14 @@ export default function ModernContactForm() {
                   <svg className="w-5 h-5 mr-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
-                  Enviando...
+                  {t('contact.form.sending')}
                 </>
               ) : (
                 <>
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  Solicitar Mi Diagnóstico Gratuito
+                  {t('contact.form.submitButton')}
                 </>
               )}
             </Button>
@@ -311,7 +322,7 @@ export default function ModernContactForm() {
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              Tus datos están 100% seguros y protegidos
+              {t('contact.form.dataSecure')}
             </div>
           </motion.form>
         </div>
