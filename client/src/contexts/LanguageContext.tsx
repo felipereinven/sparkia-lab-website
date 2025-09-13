@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import enTranslations from '../translations/en.json';
+import esTranslations from '../translations/es.json';
 
 export type Language = 'en' | 'es';
 
@@ -39,8 +41,8 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   };
 
   const t = (key: string): string => {
-    const translations = require(`../translations/${language}.json`);
-    return translations[key] || key;
+    const translations = language === 'en' ? enTranslations : esTranslations;
+    return translations[key as keyof typeof translations] || key;
   };
 
   return (

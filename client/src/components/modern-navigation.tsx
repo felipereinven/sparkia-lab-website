@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import logoWhite from "@assets/8-removebg-preview (1)_1757780913071.png";
+import LanguageSwitch from "./language-switch";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ModernNavigation() {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -58,19 +61,19 @@ export default function ModernNavigation() {
               onClick={() => scrollToSection('servicios')}
               className="text-white/90 hover:text-white transition-colors duration-200 text-sm lg:text-base font-medium"
             >
-              Servicios
+              {t('nav.services')}
             </button>
             <button 
               onClick={() => scrollToSection('proceso')}
               className="text-white/90 hover:text-white transition-colors duration-200 text-sm lg:text-base font-medium"
             >
-              Proceso
+              {t('nav.process')}
             </button>
             <button 
               onClick={() => scrollToSection('resultados')}
               className="text-white/90 hover:text-white transition-colors duration-200 text-sm lg:text-base font-medium"
             >
-              Resultados
+              {t('nav.results')}
             </button>
             <motion.button 
               onClick={() => scrollToSection('contacto')}
@@ -78,8 +81,9 @@ export default function ModernNavigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Empezar Ahora
+              {t('nav.start')}
             </motion.button>
+            <LanguageSwitch variant="header" />
           </div>
           
           {/* Mobile Menu Button */}
@@ -109,26 +113,29 @@ export default function ModernNavigation() {
                 onClick={() => scrollToSection('servicios')}
                 className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2"
               >
-                Servicios
+                {t('nav.services')}
               </button>
               <button 
                 onClick={() => scrollToSection('proceso')}
                 className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2"
               >
-                Proceso
+                {t('nav.process')}
               </button>
               <button 
                 onClick={() => scrollToSection('resultados')}
                 className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2"
               >
-                Resultados
+                {t('nav.results')}
               </button>
               <button 
                 onClick={() => scrollToSection('contacto')}
                 className="bg-white text-black hover:bg-gray-100 w-full py-3 rounded-full text-base font-semibold mt-6 transition-all duration-200 shadow-md"
               >
-                Empezar Ahora
+                {t('nav.start')}
               </button>
+              <div className="mt-4 flex justify-center">
+                <LanguageSwitch variant="footer" />
+              </div>
             </div>
           </motion.div>
         )}
