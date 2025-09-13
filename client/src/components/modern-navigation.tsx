@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import logoWhite from "@assets/5-removebg-preview (1)_1757780421080.png";
+import logoColor from "@assets/7-removebg-preview (1)_1757780588359.png";
 
 export default function ModernNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,12 +39,17 @@ export default function ModernNavigation() {
             transition={{ duration: 0.5 }}
             onClick={() => scrollToSection('inicio')}
           >
-            <img 
-              src={logoWhite} 
-              alt="Sparkia Lab"
-              className="h-10 md:h-12 w-auto object-contain"
-              data-testid="logo-sparkia-lab"
-            />
+            <div className="flex items-center space-x-3">
+              <img 
+                src={logoColor} 
+                alt="Sparkia Lab"
+                className="h-8 md:h-10 w-auto object-contain"
+                data-testid="logo-sparkia-lab"
+              />
+              <div className="text-xl md:text-2xl font-bold text-white">
+                Sparkia Lab
+              </div>
+            </div>
           </motion.div>
           
           {/* Desktop Menu */}
