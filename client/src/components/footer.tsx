@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,7 +23,7 @@ export default function Footer() {
           >
             <div className="text-3xl font-bold mb-4">Sparkia Lab</div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Agencia digital estratégica que ayuda a emprendedores a construir una presencia digital auténtica y automatizada.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <motion.a 
@@ -57,14 +59,14 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="font-semibold mb-4">Servicios</h4>
+            <h4 className="font-semibold mb-4">{t('footer.services')}</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <button 
                   onClick={() => scrollToSection('servicios')}
                   className="hover:text-white transition-colors"
                 >
-                  Diagnóstico Estratégico
+                  {t('footer.servicesList.diagnosis')}
                 </button>
               </li>
               <li>
@@ -72,7 +74,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('servicios')}
                   className="hover:text-white transition-colors"
                 >
-                  Desarrollo Web
+                  {t('footer.servicesList.webDev')}
                 </button>
               </li>
               <li>
@@ -80,7 +82,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('servicios')}
                   className="hover:text-white transition-colors"
                 >
-                  Automatización IA
+                  {t('footer.servicesList.automation')}
                 </button>
               </li>
               <li>
@@ -88,7 +90,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('servicios')}
                   className="hover:text-white transition-colors"
                 >
-                  Marketing Digital
+                  {t('footer.servicesList.marketing')}
                 </button>
               </li>
             </ul>
@@ -100,11 +102,11 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-semibold mb-4">Contacto</h4>
+            <h4 className="font-semibold mb-4">{t('footer.contact')}</h4>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <i className="fas fa-phone mr-3"></i>
-                +1 (555) 123-4567
+                +57 321 693 1671
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-3"></i>
@@ -125,7 +127,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>&copy; 2024 Sparkia Lab. Todos los derechos reservados. | Política de Privacidad | Términos de Servicio</p>
+          <p>&copy; 2024 Sparkia Lab. {t('footer.copyright')} | {t('footer.privacy')} | {t('footer.terms')}</p>
         </motion.div>
       </div>
     </footer>

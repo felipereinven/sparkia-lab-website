@@ -289,5 +289,13 @@
   "contact.form.nameError": "El nombre debe tener al menos 2 caracteres",
   "contact.form.emailError": "Email inválido",
   "contact.form.challengeError": "Describe tu desafío con más detalle",
-  "contact.form.termsError": "Debes aceptar los términos"
+  "contact.form.termsError": "Debes aceptar los términos",
+  "footer.description": "Agencia digital estratégica que ayuda a emprendedores y pequeñas empresas a construir una presencia digital auténtica, automatizada y potenciada por IA.",
+  "footer.services": "Servicios",
+  "footer.contact": "Contacto",
+  "footer.copyright": "Todos los derechos reservados.",
+  "footer.servicesList.diagnosis": "Diagnóstico Estratégico",
+  "footer.servicesList.webDev": "Desarrollo Web",
+  "footer.servicesList.automation": "Automatización IA",
+  "footer.servicesList.marketing": "Marketing Digital"
 }
