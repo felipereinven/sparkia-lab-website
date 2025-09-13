@@ -186,7 +186,8 @@ export default function ModernContactForm() {
                 <Input
                   {...form.register("name")}
                   placeholder="Tu nombre completo"
-                  className="w-full bg-muted/50 border-border focus:border-primary"
+                  className="w-full form-input"
+                  data-testid="input-name"
                 />
                 {form.formState.errors.name && (
                   <p className="text-red-400 text-sm mt-2">{form.formState.errors.name.message}</p>
@@ -198,7 +199,8 @@ export default function ModernContactForm() {
                   {...form.register("email")}
                   type="email"
                   placeholder="tu@email.com"
-                  className="w-full bg-muted/50 border-border focus:border-primary"
+                  className="w-full form-input"
+                  data-testid="input-email"
                 />
                 {form.formState.errors.email && (
                   <p className="text-red-400 text-sm mt-2">{form.formState.errors.email.message}</p>
@@ -213,13 +215,14 @@ export default function ModernContactForm() {
                   {...form.register("phone")}
                   type="tel"
                   placeholder="+1 (555) 123-4567"
-                  className="w-full bg-muted/50 border-border focus:border-primary"
+                  className="w-full form-input"
+                  data-testid="input-phone"
                 />
               </div>
               <div>
                 <Label className="block text-sm font-semibold mb-3">Tipo de negocio</Label>
                 <Select onValueChange={(value) => form.setValue("businessType", value)}>
-                  <SelectTrigger className="w-full bg-muted/50 border-border focus:border-primary">
+                  <SelectTrigger className="w-full form-input" data-testid="select-business-type">
                     <SelectValue placeholder="Selecciona una opción" />
                   </SelectTrigger>
                   <SelectContent>
@@ -236,7 +239,7 @@ export default function ModernContactForm() {
             <div className="mb-6">
               <Label className="block text-sm font-semibold mb-3">Ingresos mensuales actuales</Label>
               <Select onValueChange={(value) => form.setValue("monthlyRevenue", value)}>
-                <SelectTrigger className="w-full bg-muted/50 border-border focus:border-primary">
+                <SelectTrigger className="w-full form-input" data-testid="select-revenue">
                   <SelectValue placeholder="Selecciona un rango" />
                 </SelectTrigger>
                 <SelectContent>
@@ -254,7 +257,8 @@ export default function ModernContactForm() {
                 {...form.register("challenge")}
                 rows={4}
                 placeholder="Describe brevemente tu situación actual y qué te gustaría lograr..."
-                className="w-full bg-muted/50 border-border focus:border-primary resize-none"
+                className="w-full form-input resize-none"
+                data-testid="textarea-challenge"
               />
               {form.formState.errors.challenge && (
                 <p className="text-red-400 text-sm mt-2">{form.formState.errors.challenge.message}</p>
