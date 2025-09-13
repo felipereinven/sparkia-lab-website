@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import logoColor from "@assets/7-removebg-preview (1)_1757780588359.png";
+import logoWhite from "@assets/8-removebg-preview (1)_1757780913071.png";
 
 export default function ModernNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +41,7 @@ export default function ModernNavigation() {
           >
             <div className="flex items-center space-x-3">
               <img 
-                src={logoColor} 
+                src={logoWhite} 
                 alt="Sparkia Lab"
                 className="h-8 md:h-10 w-auto object-contain"
                 data-testid="logo-sparkia-lab"
