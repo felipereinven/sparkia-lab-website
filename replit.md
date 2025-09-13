@@ -22,6 +22,14 @@ The frontend is built using **React 18 with TypeScript** in a single-page applic
 
 **State Management**: The application uses **React Query (TanStack Query)** for server state management, handling API requests, caching, and synchronization with the backend.
 
+**Internationalization (i18n)**: The application implements a comprehensive multi-language support system using React Context. The system supports Spanish and English, with English as the default language. Key features include:
+- **LanguageContext**: Custom React Context providing language state, switching functionality, and translation function `t()`
+- **Translation Files**: JSON-based translation files (`client/src/translations/en.json` and `client/src/translations/es.json`) containing all UI text
+- **LanguageSwitch Component**: Interactive language switcher available in navigation header and footer
+- **Comprehensive Coverage**: All major components are fully internationalized including navigation, hero section, services grid, process section, statistics sections, problem-solution grid, CTA section, and contact form
+- **Localized Validation**: Form validation messages are dynamically localized using the current language context
+- **Persistent Selection**: User language preference is stored in localStorage and maintained across browser sessions
+
 ## Backend Architecture
 
 The backend follows a **RESTful API** architecture built with **Express.js** and TypeScript. The server implements a clean separation of concerns with dedicated modules for routing, storage, and utilities.
