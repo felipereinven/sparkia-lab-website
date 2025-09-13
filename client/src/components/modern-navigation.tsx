@@ -72,12 +72,6 @@ export default function ModernNavigation() {
             >
               Resultados
             </button>
-            <button 
-              onClick={() => scrollToSection('testimonios')}
-              className="text-white/90 hover:text-white transition-colors duration-200 text-sm lg:text-base font-medium"
-            >
-              Testimonios
-            </button>
             <motion.button 
               onClick={() => scrollToSection('contacto')}
               className="bg-white text-black hover:bg-gray-100 hover:shadow-lg px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-200 shadow-md"
@@ -128,12 +122,6 @@ export default function ModernNavigation() {
                 className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2"
               >
                 Resultados
-              </button>
-              <button 
-                onClick={() => scrollToSection('testimonios')}
-                className="block w-full text-left text-white hover:text-gray-300 transition-colors py-2"
-              >
-                Testimonios
               </button>
               <button 
                 onClick={() => scrollToSection('contacto')}

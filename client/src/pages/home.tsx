@@ -3,7 +3,6 @@ import ModernHero from "@/components/modern-hero";
 import ProblemSolutionGrid from "@/components/problem-solution-grid";
 import ServicesGrid from "@/components/services-grid";
 import StatsSection from "@/components/stats-section";
-import TestimonialsSection from "@/components/testimonials-section";
 import ProcessSection from "@/components/process-section";
 import ModernCTA from "@/components/modern-cta";
 import ModernContactForm from "@/components/modern-contact-form";
@@ -17,7 +16,6 @@ export default function Home() {
       <ProblemSolutionGrid />
       <ServicesGrid />
       <StatsSection />
-      <TestimonialsSection />
       <ProcessSection />
       <ModernCTA />
       <ModernContactForm />
