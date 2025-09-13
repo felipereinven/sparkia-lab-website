@@ -27,9 +27,12 @@
   "services.automation.desc": "Sales funnels that nurture leads and convert them into paying customers automatically.",
   
   "stats.clients": "Happy Clients",
-  "stats.conversion": "Average Conversion Increase",
-  "stats.roi": "ROI Guaranteed",
+  "stats.conversion": "Conversion",
+  "stats.roi": "Average ROI",
   "stats.time": "Faster Implementation",
+  "stats.revenue": "Annual Revenue",
+  "stats.automation": "Automation",
+  "stats.satisfaction": "Satisfaction",
   
   "process.title": "Our Process",
   "process.subtitle": "A proven methodology that has helped hundreds of businesses transform their digital presence.",

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ModernHero() {
+  const { t } = useLanguage();
   const scrollToContact = () => {
     const element = document.getElementById('contacto');
     if (element) {
@@ -29,17 +31,17 @@ export default function ModernHero() {
 
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-normal mb-6 md:mb-8">
-              <span className="text-white block mb-2">Construye una</span>
+              <span className="text-white block mb-2">{t('hero.build')}</span>
               <span className="text-blue-400 block mb-2 font-extrabold">
-                Presencia Digital
+                {t('hero.digital')}
               </span>
               <span className="text-gray-100 block">
-                Auténtica y Automatizada
+                {t('hero.authentic')}
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-12 leading-relaxed max-w-2xl">
-              Ayudamos a emprendedores y pequeñas empresas a posicionar su valor, conectar con su audiencia ideal y crecer de forma estructurada con IA.
+              {t('hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start">
@@ -52,7 +54,7 @@ export default function ModernHero() {
                 <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Diagnóstico Gratuito
+{t('hero.cta')}
               </motion.button>
               
               <motion.button 
@@ -63,7 +65,7 @@ export default function ModernHero() {
                 <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Ver Casos de Éxito
+{t('nav.results')}
               </motion.button>
             </div>
 
@@ -76,15 +78,15 @@ export default function ModernHero() {
             >
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">$90K+</div>
-                <div className="text-white/80 text-xs sm:text-sm mt-1">Ingresos Anuales</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1">{t('stats.revenue')}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">300%</div>
-                <div className="text-white/80 text-xs sm:text-sm mt-1">ROI Promedio</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1">{t('stats.roi')}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">24/7</div>
-                <div className="text-white/80 text-xs sm:text-sm mt-1">Automatización</div>
+                <div className="text-white/80 text-xs sm:text-sm mt-1">{t('stats.automation')}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -116,11 +118,11 @@ export default function ModernHero() {
                   <div className="grid grid-cols-2 gap-4 mt-6">
                     <div className="bg-card rounded-lg p-4">
                       <div className="text-2xl font-bold text-green-400">+250%</div>
-                      <div className="text-xs text-muted-foreground">Conversión</div>
+                      <div className="text-xs text-muted-foreground">{t('stats.conversion')}</div>
                     </div>
                     <div className="bg-card rounded-lg p-4">
                       <div className="text-2xl font-bold text-cyan-400">98%</div>
-                      <div className="text-xs text-muted-foreground">Satisfacción</div>
+                      <div className="text-xs text-muted-foreground">{t('stats.satisfaction')}</div>
                     </div>
                   </div>
                 </div>

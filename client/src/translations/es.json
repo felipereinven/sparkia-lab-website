@@ -27,9 +27,12 @@
   "services.automation.desc": "Embudos de ventas que nutren leads y los convierten en clientes de pago automáticamente.",
   
   "stats.clients": "Clientes Felices",
-  "stats.conversion": "Aumento Promedio de Conversión",
-  "stats.roi": "ROI Garantizado",
+  "stats.conversion": "Conversión",
+  "stats.roi": "ROI Promedio",
   "stats.time": "Implementación Más Rápida",
+  "stats.revenue": "Ingresos Anuales",
+  "stats.automation": "Automatización",
+  "stats.satisfaction": "Satisfacción",
   
   "process.title": "Nuestro Proceso",
   "process.subtitle": "Una metodología probada que ha ayudado a cientos de empresas a transformar su presencia digital.",
