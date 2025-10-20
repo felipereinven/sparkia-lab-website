@@ -97,7 +97,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <span className="mr-2">📱</span>
                 <a 
-                  href={`tel:${t("footer.phone")}`}
+                  href="tel:+573216931671"
                   className="hover:text-white transition-colors"
                   data-testid="link-phone"
                 >
