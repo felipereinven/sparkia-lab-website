@@ -53,37 +53,37 @@ export default function StatsSection() {
       value: `$${counters.revenue}K+`,
       label: t('statsSection.revenue.label'),
       description: t('statsSection.revenue.description'),
-      color: "text-green-400"
+      color: "text-green-300"
     },
     {
       icon: "📈",
       value: `${counters.roi}%`,
       label: t('statsSection.roi.label'),
       description: t('statsSection.roi.description'),
-      color: "text-blue-400"
+      color: "text-cyan-300"
     },
     {
       icon: "😊",
       value: `${counters.satisfaction}%`,
       label: t('statsSection.satisfaction.label'),
       description: t('statsSection.satisfaction.description'),
-      color: "text-purple-400"
+      color: "text-purple-300"
     },
     {
       icon: "🎯",
       value: `${counters.clients}+`,
       label: t('statsSection.clients.label'),
       description: t('statsSection.clients.description'),
-      color: "text-orange-400"
+      color: "text-orange-300"
     }
   ];
 
   return (
     <section id="resultados" className="py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 gradient-bg opacity-90"></div>
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 gradient-bg"></div>
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div 
@@ -96,7 +96,7 @@ export default function StatsSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t('statsSection.title')}
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/95 max-w-3xl mx-auto">
             {t('statsSection.subtitle')}
           </p>
         </motion.div>
@@ -121,7 +121,7 @@ export default function StatsSection() {
                 {stat.value}
               </div>
               <div className="text-white font-semibold mb-1">{stat.label}</div>
-              <div className="text-white/60 text-sm">{stat.description}</div>
+              <div className="text-white/90 text-sm">{stat.description}</div>
             </motion.div>
           ))}
         </div>
@@ -136,21 +136,21 @@ export default function StatsSection() {
         >
           <div className="text-white">
             <h3 className="text-3xl font-bold mb-6">{t('statsSection.automation.title')}</h3>
-            <p className="text-xl text-white/80 mb-6">
+            <p className="text-xl text-white/95 mb-6">
               {t('statsSection.automation.description')}
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-4"></div>
-                <span>{t('statsSection.automation.feature1')}</span>
+                <div className="w-2 h-2 bg-green-300 rounded-full mr-4 shadow-lg shadow-green-300/50"></div>
+                <span className="text-white/95">{t('statsSection.automation.feature1')}</span>
               </div>
               <div className="flex items-center">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mr-4"></div>
-                <span>{t('statsSection.automation.feature2')}</span>
+                <div className="w-2 h-2 bg-cyan-300 rounded-full mr-4 shadow-lg shadow-cyan-300/50"></div>
+                <span className="text-white/95">{t('statsSection.automation.feature2')}</span>
               </div>
               <div className="flex items-center">
-                <div className="w-2 h-2 bg-purple-400 rounded-full mr-4"></div>
-                <span>{t('statsSection.automation.feature3')}</span>
+                <div className="w-2 h-2 bg-purple-300 rounded-full mr-4 shadow-lg shadow-purple-300/50"></div>
+                <span className="text-white/95">{t('statsSection.automation.feature3')}</span>
               </div>
             </div>
           </div>
@@ -163,21 +163,21 @@ export default function StatsSection() {
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-white font-semibold">{t('statsSection.automation.status')}</span>
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-green-300 rounded-full animate-pulse shadow-lg shadow-green-300/50"></div>
               </div>
               
               <div className="space-y-3">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/80">{t('statsSection.automation.leadsToday')}</span>
-                  <span className="text-green-400 font-semibold">+23</span>
+                  <span className="text-white/95">{t('statsSection.automation.leadsToday')}</span>
+                  <span className="text-green-300 font-bold">+23</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/80">{t('statsSection.automation.emailsSent')}</span>
-                  <span className="text-blue-400 font-semibold">847</span>
+                  <span className="text-white/95">{t('statsSection.automation.emailsSent')}</span>
+                  <span className="text-cyan-300 font-bold">847</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white/80">{t('statsSection.automation.conversions')}</span>
-                  <span className="text-purple-400 font-semibold">12</span>
+                  <span className="text-white/95">{t('statsSection.automation.conversions')}</span>
+                  <span className="text-purple-300 font-bold">12</span>
                 </div>
               </div>
             </motion.div>
