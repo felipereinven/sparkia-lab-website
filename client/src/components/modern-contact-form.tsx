@@ -93,7 +93,7 @@ export default function ModernContactForm() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {t('contact.title')} 
+            {t('contact.title')}{' '}
             <span className="text-gradient">{t('contact.freeDiagnosis')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

@@ -48,8 +48,8 @@ export default function ProcessSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {t('process.title')} 
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            {t('process.title')}{' '}
             <span className="text-gradient block mt-2">{t('process.digital')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
