@@ -50,7 +50,7 @@ export default function ProcessSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {t('process.title')}{' '}
-            <span className="text-gradient block mt-2">{t('process.digital')}</span>
+            <span className="text-gradient block mt-2 pb-2">{t('process.digital')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t('process.subtitle')}
