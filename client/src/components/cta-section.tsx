@@ -60,14 +60,15 @@ export default function CTASection() {
             <i className="fas fa-calendar-check mr-2"></i>
             Reservar Mi Diagnóstico Gratuito
           </motion.button>
-          <motion.button 
-            className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all"
+          <motion.a 
+            href="tel:+573216931671"
+            className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all inline-block"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <i className="fas fa-phone mr-2"></i>
-            Llamar Ahora: +1 (555) 123-4567
-          </motion.button>
+            Llamar Ahora: +57 321 693 1671
+          </motion.a>
         </motion.div>
 
         <motion.div 
