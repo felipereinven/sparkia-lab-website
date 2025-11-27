@@ -1,0 +1,741 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparkia Lab - Agencia Digital con IA | Automatización Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        purple: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [sticky header with smooth scroll] -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">
+                        Sparkia Lab
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors">Inicio</a>
+                        <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition-colors">Servicios</a>
+                        <a href="#transformacion" class="text-gray-700 hover:text-blue-600 transition-colors">Transformación</a>
+                        <a href="#testimonios" class="text-gray-700 hover:text-blue-600 transition-colors">Testimonios</a>
+                        <a href="#contacto" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection [animated background with CTA] -->
+    <section id="inicio" class="gradient-bg pt-20 pb-16 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Construye una Presencia Digital
+                        <span class="text-yellow-400">Auténtica y Automatizada</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+                        Ayudamos a emprendedores y pequeñas empresas a posicionar su valor, conectar con su audiencia ideal y crecer de forma estructurada con IA.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button data-event="click:handleConsultation" class="bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Solicitar Diagnóstico Gratuito
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all">
+                            <i class="fas fa-play mr-2"></i>
+                            Ver Casos de Éxito
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">90K+</div>
+                            <div class="text-blue-200 text-sm">Ingresos Anuales Promedio</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">3x</div>
+                            <div class="text-blue-200 text-sm">ROI Promedio</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">24/7</div>
+                            <div class="text-blue-200 text-sm">Automatización IA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Modern marketing dashboard illustration -->
+                    <!-- @MOCK_IMAGE: Dashboard interface showing analytics and automation tools -->
+                    <div class="relative animate-float">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Dashboard de automatización de marketing digital" 
+                             class="rounded-2xl shadow-2xl w-full" data-mock-image="true" />
+                        <div class="absolute -top-4 -right-4 bg-green-500 text-white p-3 rounded-full shadow-lg animate-pulse-slow">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-purple-500 text-white p-3 rounded-full shadow-lg animate-pulse-slow">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- Problem/Solution Section -->
+    <!-- @COMPONENT: ProblemSolution [before/after transformation showcase] -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    De la Improvisación al <span class="text-blue-600">Crecimiento Estructurado</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transformamos negocios que están estancados en negocios que crecen de forma sostenible y automatizada.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-red-700 mb-4">😰 Antes de Sparkia Lab</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                No saben por dónde empezar ni cómo estructurar su marca online
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                Sienten que están solos, improvisando y perdiendo tiempo valioso
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                Su comunicación no posiciona ni convierte
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                Ven a su competencia avanzar mientras ellos están estancados
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-green-700 mb-4">✨ Después de Sparkia Lab</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                Tienen una estrategia clara, medible y adaptada a su realidad
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                Delegan la parte técnica mientras se enfocan en liderar y crecer
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                Comunican con claridad y conectan con su audiencia ideal
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                Viven su negocio con más orden, paz mental y resultados sostenibles
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProblemSolution -->
+
+    <!-- Services Section -->
+    <!-- @COMPONENT: ServicesShowcase [interactive service cards] -->
+    <section id="servicios" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Solución Integral en <span class="text-purple-600">Fases Estratégicas</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Implementamos cada fase según la necesidad y madurez de tu negocio, garantizando resultados medibles.
+                </p>
+            </div>
+
+            <!-- @MAP: services.map(service => ( -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Diagnóstico Estratégico</h3>
+                    <p class="text-gray-600 mb-6">
+                        Análisis profundo de marca, mercado y objetivos. Auditoría digital completa con plan de acción estratégico.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Análisis de diferenciador y cliente ideal</li>
+                        <li>• Auditoría digital completa</li>
+                        <li>• Plan de acción estratégico</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bullhorn text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Posicionamiento y Mensaje</h3>
+                    <p class="text-gray-600 mb-6">
+                        Desarrollo de storytelling auténtico y copywriting persuasivo que conecta y convierte.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Desarrollo de propuesta de valor</li>
+                        <li>• Storytelling auténtico</li>
+                        <li>• Copywriting persuasivo</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Plataforma Web</h3>
+                    <p class="text-gray-600 mb-6">
+                        Diseño y desarrollo web con enfoque en UX/UI, conversión y automatizaciones inteligentes.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Diseño UX/UI optimizado</li>
+                        <li>• Automatizaciones con IA</li>
+                        <li>• Analítica y CRM integrados</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-funnel-dollar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Embudo Automatizado</h3>
+                    <p class="text-gray-600 mb-6">
+                        Funnel de ventas completo con lead magnets, emails y secuencias automatizadas.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Diseño de funnel completo</li>
+                        <li>• Lead magnets estratégicos</li>
+                        <li>• Secuencias de email marketing</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Acompañamiento</h3>
+                    <p class="text-gray-600 mb-6">
+                        Mentoría estratégica mensual con análisis de resultados y ajustes continuos.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Reuniones de seguimiento</li>
+                        <li>• Análisis de métricas</li>
+                        <li>• Soporte técnico continuo</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-share-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Gestión de Redes</h3>
+                    <p class="text-gray-600 mb-6">
+                        Estrategia completa en redes sociales con calendario y gestión de comunidad.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Calendario de publicaciones</li>
+                        <li>• Análisis de métricas</li>
+                        <li>• Gestión de comunidad</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesShowcase -->
+
+    <!-- Transformation Stats -->
+    <!-- @COMPONENT: TransformationStats [animated counters] -->
+    <section id="transformacion" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-6">
+                    Resultados que Hablan por Sí Solos
+                </h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    Nuestros clientes experimentan transformaciones reales y medibles en su negocio.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold mb-4 text-yellow-400" data-bind="stats.revenue">$90K+</div>
+                    <div class="text-lg text-blue-100">Ingresos Anuales Promedio por Cliente</div>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold mb-4 text-yellow-400" data-bind="stats.roi">300%</div>
+                    <div class="text-lg text-blue-100">ROI Promedio en 12 Meses</div>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold mb-4 text-yellow-400" data-bind="stats.automation">24/7</div>
+                    <div class="text-lg text-blue-100">Automatización Activa</div>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold mb-4 text-yellow-400" data-bind="stats.satisfaction">98%</div>
+                    <div class="text-lg text-blue-100">Satisfacción del Cliente</div>
+                </div>
+            </div>
+
+            <div class="mt-16 max-w-4xl mx-auto">
+                <!-- Business growth transformation image -->
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600" 
+                     alt="Gráfico de crecimiento empresarial y transformación digital" 
+                     class="rounded-2xl shadow-2xl w-full" />
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TransformationStats -->
+
+    <!-- Testimonials -->
+    <!-- @COMPONENT: TestimonialCarousel [social proof with avatars] -->
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Lo que Dicen Nuestros <span class="text-blue-600">Clientes</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Testimonios reales de emprendedores que transformaron su negocio con nosotros.
+                </p>
+            </div>
+
+            <!-- @MAP: testimonials.map(testimonial => ( -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8 relative" data-mock="true">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                             alt="María González - Fundadora de EcoVital" 
+                             class="w-16 h-16 rounded-full object-cover mr-4" data-mock-image="true" />
+                        <div>
+                            <div class="font-semibold text-gray-900" data-bind="testimonial.name">María González</div>
+                            <div class="text-gray-600 text-sm" data-bind="testimonial.company">Fundadora, EcoVital</div>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-bind="testimonial.content">
+                        "En 6 meses pasamos de tener una web amateur a un sistema completamente automatizado que nos genera leads calificados 24/7. Sparkia Lab transformó completamente nuestro negocio."
+                    </p>
+                    <div class="absolute top-6 right-6 text-4xl text-blue-200">"</div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 relative" data-mock="true">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                             alt="Carlos Mendez - CEO de TechStart" 
+                             class="w-16 h-16 rounded-full object-cover mr-4" data-mock-image="true" />
+                        <div>
+                            <div class="font-semibold text-gray-900" data-bind="testimonial.name">Carlos Méndez</div>
+                            <div class="text-gray-600 text-sm" data-bind="testimonial.company">CEO, TechStart</div>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-bind="testimonial.content">
+                        "La estrategia de Sparkia Lab nos ayudó a escalar de $5K a $25K mensuales en menos de un año. Su enfoque humano + IA es exactamente lo que necesitábamos."
+                    </p>
+                    <div class="absolute top-6 right-6 text-4xl text-blue-200">"</div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 relative" data-mock="true">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                             alt="Ana Ruiz - Directora de CreativeLab" 
+                             class="w-16 h-16 rounded-full object-cover mr-4" data-mock-image="true" />
+                        <div>
+                            <div class="font-semibold text-gray-900" data-bind="testimonial.name">Ana Ruiz</div>
+                            <div class="text-gray-600 text-sm" data-bind="testimonial.company">Directora, CreativeLab</div>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-bind="testimonial.content">
+                        "Finalmente tenemos orden y estrategia. Antes improvisábamos todo, ahora tenemos sistemas que funcionan solos. ROI de 400% en el primer año."
+                    </p>
+                    <div class="absolute top-6 right-6 text-4xl text-blue-200">"</div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialCarousel -->
+
+    <!-- FAQ Section -->
+    <!-- @COMPONENT: FAQAccordion [expandable questions] -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Preguntas <span class="text-purple-600">Frecuentes</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Resolvemos las dudas más comunes sobre nuestros servicios.
+                </p>
+            </div>
+
+            <!-- @MAP: faqs.map(faq => ( -->
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" data-event="click:toggleFAQ">
+                        <span class="font-semibold text-gray-900">¿Cuánto tiempo toma ver resultados?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600" data-mock="true">
+                        Los primeros resultados se ven en 30-45 días, pero la transformación completa toma 3-6 meses dependiendo del punto de partida y objetivos.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" data-event="click:toggleFAQ">
+                        <span class="font-semibold text-gray-900">¿Trabajan con negocios de cualquier tamaño?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden" data-mock="true">
+                        Nos especializamos en emprendedores, marcas emergentes y pequeñas empresas que están listos para estructurar y escalar su negocio.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" data-event="click:toggleFAQ">
+                        <span class="font-semibold text-gray-900">¿Qué incluye el diagnóstico gratuito?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden" data-mock="true">
+                        Análisis completo de tu presencia digital actual, identificación de oportunidades y plan estratégico personalizado de 90 minutos.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" data-event="click:toggleFAQ">
+                        <span class="font-semibold text-gray-900">¿Cómo funciona la automatización con IA?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden" data-mock="true">
+                        Implementamos chatbots inteligentes, automatización de email marketing, análisis de datos en tiempo real y optimización automática de campañas.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center" data-event="click:toggleFAQ">
+                        <span class="font-semibold text-gray-900">¿Ofrecen garantías de resultados?</span>
+                        <i class="fas fa-chevron-down text-gray-500"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden" data-mock="true">
+                        Garantizamos que seguiremos trabajando hasta que veas resultados tangibles. Si no mejora tu ROI en 6 meses, seguimos sin costo adicional.
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FAQAccordion -->
+
+    <!-- CTA Section -->
+    <!-- @COMPONENT: CTASection [urgency and scarcity elements] -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                ¿Listo para Transformar tu Negocio?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Solo trabajamos con 3 clientes nuevos por mes para garantizar máxima calidad y atención personalizada.
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-gift text-yellow-400 text-3xl mr-4"></i>
+                    <span class="text-2xl font-bold text-white">Oferta Especial</span>
+                </div>
+                <p class="text-blue-100 mb-6">
+                    Diagnóstico Estratégico Gratuito (valor $500) + 30% de descuento en tu primer proyecto
+                </p>
+                <div class="text-sm text-yellow-400 font-semibold">
+                    ⏰ Solo quedan 2 espacios disponibles este mes
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button data-event="click:handleBooking" class="bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    Reservar Mi Diagnóstico Gratuito
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-700 transition-all">
+                    <i class="fas fa-phone mr-2"></i>
+                    Llamar Ahora: +1 (555) 123-4567
+                </button>
+            </div>
+
+            <div class="mt-8 text-blue-200 text-sm">
+                <i class="fas fa-lock mr-2"></i>
+                100% sin compromiso • Consulta confidencial • Resultados garantizados
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CTASection -->
+
+    <!-- Contact Form -->
+    <!-- @COMPONENT: ContactForm [lead capture form] -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Solicita tu <span class="text-blue-600">Diagnóstico Gratuito</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Completa el formulario y te contactaremos en menos de 24 horas.
+                </p>
+            </div>
+
+            <form class="bg-gray-50 rounded-2xl p-8" data-event="submit:handleContactForm">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Nombre completo *</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" placeholder="Tu nombre completo" />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" placeholder="tu@email.com" />
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Teléfono</label>
+                        <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" placeholder="+1 (555) 123-4567" />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Tipo de negocio</label>
+                        <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors">
+                            <option>Selecciona una opción</option>
+                            <option>E-commerce</option>
+                            <option>Servicios profesionales</option>
+                            <option>SaaS / Tecnología</option>
+                            <option>Consultoría</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Ingresos mensuales actuales</label>
+                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors">
+                        <option>Selecciona un rango</option>
+                        <option>Menos de $5K</option>
+                        <option>$5K - $15K</option>
+                        <option>$15K - $50K</option>
+                        <option>Más de $50K</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">¿Cuál es tu mayor desafío actual? *</label>
+                    <textarea required rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" placeholder="Describe brevemente tu situación actual y qué te gustaría lograr..."></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="flex items-center">
+                        <input type="checkbox" required class="mr-3 rounded border-gray-300 text-blue-600" />
+                        <span class="text-gray-700">Acepto recibir comunicaciones de Sparkia Lab y la política de privacidad *</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Solicitar Mi Diagnóstico Gratuito
+                </button>
+
+                <div class="mt-4 text-center text-gray-500 text-sm">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    Tus datos están 100% seguros y nunca serán compartidos
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactForm -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [company info and links] -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold mb-4">Sparkia Lab</div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Agencia digital estratégica que ayuda a emprendedores a construir una presencia digital auténtica y automatizada.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-linkedin text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Diagnóstico Estratégico</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Desarrollo Web</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Automatización IA</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Marketing Digital</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            hello@sparkialab.com
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3"></i>
+                            Miami, FL
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sparkia Lab. Todos los derechos reservados. | Política de Privacidad | Términos de Servicio</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        (function() {
+            // Smooth scroll for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // FAQ toggle functionality
+            const faqButtons = document.querySelectorAll('[data-event="click:toggleFAQ"]');
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // Form submission handler
+            const contactForm = document.querySelector('[data-event="submit:handleContactForm"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic
+                    alert('¡Gracias! Te contactaremos en menos de 24 horas.');
+                });
+            }
+
+            // CTA button handlers
+            const ctaButtons = document.querySelectorAll('[data-event^="click:handle"]');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // TODO: Implement booking/consultation logic
+                    document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
