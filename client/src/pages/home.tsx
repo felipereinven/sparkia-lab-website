@@ -558,7 +558,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <Reveal>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">{t('process.title')}</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Process</h2>
               <p className="text-slate-400 text-lg">{t('process.subtitle')}</p>
             </div>
           </Reveal>
